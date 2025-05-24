@@ -4,3 +4,12 @@ npm init -y
 ::INSTALANDO AS DEPENDENCIAS DO PROJETO
 npm i sequelize 
 npm i pg pg-hstore
+
+git clone https://github.com/marciogferreira/fs21_dc_backend 
+
+:: PASSO 1 - CONFIGURE O ARQUIVO conexao.js 
+    OBS: Veja se o banco tá criando no seu Postgres.
+:: PASSO 2 - RODE AS MIGRAÇÕES, ELAS IRÃO CRIAR AS TABELAS NA SUA BASE DE DADOS.
+    node src/database/migration.js
+:: PASSO 3 - EXECUTE O PROJETO E ACESSE localhost:3000/usuarios
+    npm start
