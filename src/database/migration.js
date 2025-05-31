@@ -12,5 +12,4 @@ function asyncMigrations() {
 
 module.exports = asyncMigrations
 
-
 // node migration.js

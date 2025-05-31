@@ -1,0 +1,212 @@
+type: collection.insomnia.rest/5.0
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1697506081191
+  modified: 1697506081191
+collection:
+  - name: USUARIOS
+    meta:
+      id: fld_e1bb4cf8154047ff9d046ce5f46f3598
+      created: 1697506134211
+      modified: 1697506134211
+      sortKey: -1697506134211
+  - name: DESPESAS
+    meta:
+      id: fld_e3527bb5c6264417b747dbc28293292e
+      created: 1709406120218
+      modified: 1709406120218
+      sortKey: -1697506134161
+  - name: SALES_TRACK
+    meta:
+      id: fld_5cd90245bc28492386ee599cae779b00
+      created: 1719690617641
+      modified: 1719690617641
+      sortKey: -1719690617641
+    children:
+      - name: USUARIOS
+        meta:
+          id: fld_574cb32beeac4606824defccc65c75a4
+          created: 1719690634619
+          modified: 1719690634619
+          sortKey: -1719690634619
+      - name: CLIENTES
+        meta:
+          id: fld_fb979fed61df4dd482a24180f47bda62
+          created: 1719691369681
+          modified: 1719691369681
+          sortKey: -1719690626130
+  - name: GERACAO_TECH
+    meta:
+      id: fld_70bdd1eb1e8d478f97ad8f2d074cffd9
+      created: 1721391937327
+      modified: 1721391937327
+      sortKey: -1721391937327
+    children:
+      - name: USERS
+        meta:
+          id: fld_52e29324c1df41d09d5c614b64caf180
+          created: 1721400323585
+          modified: 1721400323585
+          sortKey: -1721400323585
+      - name: POSTS
+        meta:
+          id: fld_2451299f1af04b329822ec7366008e8b
+          created: 1721400351693
+          modified: 1721400351693
+          sortKey: -1721396130456
+  - name: FS29
+    meta:
+      id: fld_895c8009d59a429c8c6b41eab9148fec
+      created: 1723908167049
+      modified: 1723908167049
+      sortKey: -1723908167049
+    children:
+      - name: USUARIOS
+        meta:
+          id: fld_6c119cdf348d4329b5bddc44703ddf2e
+          created: 1723908336036
+          modified: 1723908336036
+          sortKey: -1723908336036
+      - name: PRODUCTS
+        meta:
+          id: fld_28ab9c8d5b0c473a83bca0a4ca60fe2c
+          created: 1724113384868
+          modified: 1724114522389
+          sortKey: -1723908251542.5
+  - name: FS21
+    meta:
+      id: fld_e008cd0fc2294ccc86c9fd7f2365dc6f
+      created: 1742049070483
+      modified: 1742049070483
+      sortKey: -1742049070484
+    children:
+      - url: http://localhost:3000/usuarios
+        name: LISTAR_USUARIOS
+        meta:
+          id: req_f515a77af1a347689504576afc8fc52f
+          created: 1748094766866
+          modified: 1748094814076
+          isPrivate: false
+          sortKey: -1748094766866
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/usuarios
+        name: CRIAR_USUARIOS
+        meta:
+          id: req_d63a86b57abe4227a91f4d1830776e43
+          created: 1748096059875
+          modified: 1748096115776
+          isPrivate: false
+          sortKey: -1747801517429
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nome": "Elmo",
+            	"email": "elmo@gmail.com",
+            	"senha": "123",
+            	"ativo": true
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/usuarios/1
+        name: ATUALIZAR_USUARIOS
+        meta:
+          id: req_be59a9e23115408c880a79d361a25bb5
+          created: 1748097076860
+          modified: 1748694755132
+          isPrivate: false
+          sortKey: -1747654892710.5
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nome": "Elmo Gomes",
+            	"email": "elmo@gmail.com",
+            	"senha": "123",
+            	"ativo": true
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/usuarios/1
+        name: DELETAR_USUARIOS
+        meta:
+          id: req_c1972455b4084665a26e1e351d372308
+          created: 1748703187467
+          modified: 1748703195977
+          isPrivate: false
+          sortKey: -1747581580351.25
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: FDEV009
+    meta:
+      id: fld_727692a8d0eb4a8ba09037c55dc2578c
+      created: 1746300341735
+      modified: 1746300341735
+      sortKey: -1746300341735
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1697506110124
+    modified: 1697506110124
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1697506110121
+    modified: 1697506110121
+    isPrivate: false
+  subEnvironments:
+    - name: New Environment
+      meta:
+        id: env_7e942a05b9ab4a7dac6c91f9f1e767dd
+        created: 1702152020214
+        modified: 1702152020214
+        isPrivate: true
+        sortKey: 1702152020214
