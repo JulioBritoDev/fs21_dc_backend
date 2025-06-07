@@ -1,6 +1,10 @@
 const express = require('express');
 const asyncMigrations = require('./src/database/migration.js')
 const UsuariosRoute = require('./src/routes/UsuariosRoute.js');
+const AutoresRoute = require('./src/routes/AutoresRoute.js');
+const EditoresRoute = require('./src/routes/EditoresRoute.js');
+const LivrosRoute = require('./src/routes/LivrosRoute.js');
+
 const { default: axios } = require('axios');
 
 const app = express()
@@ -32,6 +36,9 @@ app.get('/', (request, response) => {
 })
 
 app.use(UsuariosRoute)
+app.use(AutoresRoute)
+app.use(EditoresRoute)
+app.use(LivrosRoute)
 
 app.listen(3000, () => {
     console.log("Servidor executando na porta 3000");
