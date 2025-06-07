@@ -1,4 +1,5 @@
 const UsuarioModel = require("../model/UsuarioModel");
+const UsuariosServices = require("../services/UsuariosServices");
 
 const UsuarioController = {
     listar: async (request, response) => {
@@ -11,12 +12,20 @@ const UsuarioController = {
         return response.json(dados);
     },
     criar: async (request, response) => {
-        const dados = request.body;
-        await UsuarioModel.create(dados);
-        return response.json({ 
-            message: 'Usuário criado com sucesso!',
-            data: dados
-        })
+
+        try {
+            const dados = request.body;
+            await UsuariosServices.validandoUsuario(dados);
+            await UsuarioModel.create(dados);
+            return response.json({ 
+                message: 'Usuário criado com sucesso!',
+                data: dados
+            })
+        } catch(e) {
+            return response.status(500).json({ 
+                message: 'Não foi possível cadastrar seu usuário. ' + e
+            })
+        }
     },
     atualizar: async (request, response) => {
         const dados = request.body;
