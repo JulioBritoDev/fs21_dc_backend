@@ -15,15 +15,15 @@ const UsuariosServices = {
         }
 
         // VERIFICANDO SE EXISTE UM USUARIO COM MESMO EMAIL
-        const consultaUsuario = await UsuarioModel.findOne({
-            where: {
-                email: dados.email
-            }
-        })
+        // const consultaUsuario = await UsuarioModel.findOne({
+        //     where: {
+        //         email: dados.email
+        //     }
+        // })
         
-        if(consultaUsuario) {
-            throw('E-mail já está sendo utilizado por outro usuário.');
-        }
+        // if(consultaUsuario) {
+        //     throw('E-mail já está sendo utilizado por outro usuário.');
+        // }
 
     }
 }

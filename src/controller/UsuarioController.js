@@ -1,4 +1,5 @@
 const UsuarioModel = require("../model/UsuarioModel");
+const ErrorServices = require("../services/ErrorServices");
 const UsuariosServices = require("../services/UsuariosServices");
 
 const UsuarioController = {
@@ -20,11 +21,19 @@ const UsuarioController = {
             return response.json({ 
                 message: 'Usuário criado com sucesso!',
                 data: dados
-            })
+            })  
+
         } catch(e) {
-            return response.status(500).json({ 
-                message: 'Não foi possível cadastrar seu usuário. ' + e
-            })
+            return ErrorServices.validacaoErro('Não foi possível cadastrar seu usuário.', e, response);
+            // if(e.name ===  'SequelizeUniqueConstraintError') {
+            //     return response.status(422).json({ 
+            //         message: 'Não foi possível cadastrar seu usuário. ' + e.errors[0].message
+            //     })
+            // }
+            
+            // return response.status(500).json({ 
+            //     message: 'Não foi possível cadastrar seu usuário. ' + e
+            // })
         }
     },
     atualizar: async (request, response) => {
