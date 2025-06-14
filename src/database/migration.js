@@ -1,7 +1,7 @@
 const Conexao = require('../config/conexao.js')
 const UsuarioModel = require('../model/UsuarioModel.js')
 const AutorModel = require('../model/AutorModel.js')
-const EditorModel = require("../model/EditorModel")
+const EditorModel = require("../model/EditorModel.js")
 const LivroModel = require('../model/LivroModel.js')
 
 function asyncMigrations() {
