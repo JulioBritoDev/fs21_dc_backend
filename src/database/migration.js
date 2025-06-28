@@ -21,10 +21,10 @@ async function criarUsuario() {
     }
 }
 
-function asyncMigrations() {
+async function asyncMigrations() {
     try {
-        Conexao.sync({ force: false, logging: false });
-        criarUsuario();
+        await Conexao.sync({ force: false, logging: false });
+        await criarUsuario();
         console.log("Tabelas Criadas!");
     } catch(e) {
         throw new e;
