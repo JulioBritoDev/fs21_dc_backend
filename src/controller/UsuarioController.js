@@ -1,7 +1,7 @@
 const UsuarioModel = require("../model/UsuarioModel");
 const ErrorServices = require("../services/ErrorServices");
 const UsuariosServices = require("../services/UsuariosServices");
-
+const Helpers = require('../config/Helpers.js');
 const UsuarioController = {
     listar: async (request, response) => {
         const dados = await UsuarioModel.findAll();
@@ -16,6 +16,7 @@ const UsuarioController = {
 
         try {
             const dados = request.body;
+            dados.senha = Helpers.crypto(dados.senha);
             await UsuariosServices.validandoUsuario(dados);
             await UsuarioModel.create(dados);
             return response.json({ 
@@ -39,6 +40,7 @@ const UsuarioController = {
     atualizar: async (request, response) => {
         const dados = request.body;
         const id = request.params.id;
+        dados.senha = Helpers.crypto(dados.senha);
         await UsuarioModel.update(dados, {
             where: {
                 id: id

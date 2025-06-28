@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
 const UsuarioModel = require("../model/UsuarioModel");
 require('dotenv').config()
+const Helpers = require('../config/Helpers.js');
 
 const AutorizacaoController = {
     login: async (request, response) => {
@@ -8,7 +9,7 @@ const AutorizacaoController = {
         const usuario = await UsuarioModel.findOne({
             where: {
             email: body.email,
-            senha: body.senha 
+            senha: Helpers.crypto(body.senha) 
             }
         })
         if(usuario) {
