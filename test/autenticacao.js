@@ -1,8 +1,4 @@
-const axios = require('axios');
-
-const Api = axios.create({
-    baseURL: 'http://localhost:3000/'
-});
+const Api = require('./api.js');
 
 async function getToken() {
     const response = await Api.post('login', {
@@ -12,7 +8,4 @@ async function getToken() {
     return response;
 }
 
-module.exports = {
-    Api,
-    getToken
-}
+module.exports = getToken;
