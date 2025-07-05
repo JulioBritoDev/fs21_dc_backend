@@ -13,6 +13,8 @@ app.get('/', (request, response) => {
 app.use(PublicRoute)
 app.use(PrivateRoute)
 
-app.listen(3000, () => {
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
     console.log("Servidor executando na porta 3000");
 })
