@@ -2,8 +2,12 @@ const express = require('express');
 const asyncMigrations = require('./src/database/migration.js')
 const PublicRoute = require('./src/routes/PublicRoute.js');
 const PrivateRoute = require('./src/routes/PrivateRoute.js');
+const cors = require('cors')
 
 const app = express()
+app.use(cors({
+    origin: '*'
+}));
 app.use(express.json()) // Autorizando o Uso de request.body
 // Migrations
 asyncMigrations()
